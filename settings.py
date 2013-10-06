@@ -134,12 +134,12 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'grappelli.dashboard',
-    'grappelli',
     'django.contrib.admin',
     'gunicorn',
     'tastypie',
     'south',
+    'mptt',
+    'miescuela.datos',
 )
 
 # A sample logging configuration. The only tangible logging
