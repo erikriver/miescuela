@@ -28,7 +28,8 @@ class Command(NoArgsCommand):
             mpio_dict = municipios_dict[municipio]['datos_municipio'][0]
             mpio = Localidad(clave=int(municipio),
                              nombre_entidad=mpio_dict['nombre_entidad'],
-                             tipo=mpio_dict['tipo'])
+                             tipo=mpio_dict['tipo'],
+                             parent=edo)
             mpio.save()
             mpio_loc_dict = municipios_dict[municipio]['localidades']
             for localidad in mpio_loc_dict:
@@ -36,7 +37,8 @@ class Command(NoArgsCommand):
                 local_dict = mpio_loc_dict[localidad]['datos_localidad'][0]
                 local = Localidad(clave=local_dict['id'],
                                   nombre_entidad=local_dict['nombre_entidad'],
-                                  tipo=local_dict['tipo'])
+                                  tipo=local_dict['tipo'],
+                                  parent=mpio)
                 local.save()
                 local_escuelas_dict = mpio_loc_dict[localidad]['datos_escuelas']
                 for escuela in local_escuelas_dict:

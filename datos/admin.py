@@ -8,10 +8,10 @@ class LocalidadAdmin(admin.ModelAdmin):
 
 
 class EscuelaAdmin(admin.ModelAdmin):
-    list_display = ('clave', 'cct', 'nombre', 'tipo', 'Localidad__nombre_entidad',)
-    list_filter = ('tipo', 'enlace')
+    list_display = ('clave', 'cct', 'nombre', 'tipo', 'localidad',)
+    list_filter = ('tipo', 'enlace', 'valida')
 
 
 admin.site.register(Localidad, LocalidadAdmin)
-admin.site.register(Escuela)
+admin.site.register(Escuela, EscuelaAdmin)
 admin.site.register(ResultadoGlobal)
